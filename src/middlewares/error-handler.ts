@@ -10,6 +10,7 @@ export const errorHandler = (
     if (err instanceof CustomError) {
         return res.status(err.statusCode).send({ errors: err.serializeError() });
     }
+    console.error("UNKNOWN ERROR", err);
     res.status(500).send({
         errors: [
             { message: 'Something went wrong' }

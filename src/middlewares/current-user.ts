@@ -19,13 +19,17 @@ export const currentUser = (
     res: Response,
     next: NextFunction
 ) => {
+    console.log("current-user-middleware -> req.session.jwt", req.session?.jwt);
     if (!req.session?.jwt) { // === !req.session || !req.session.jwt
         return next();
     }
 
     try {
         const payload = jwt.verify(req.session.jwt, process.env.JWT_SECRET_KEY!) as UserPayload;
+        console.log("current-user-middleware -> payload", payload);
         req.currentUser = payload;
-    } catch (error) { }
+    } catch (error) {
+        console.log("current-user-middleware -> error", error);
+    }
     next();
 };

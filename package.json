@@ -11,7 +11,7 @@
     "clean": "del ./build/*",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",

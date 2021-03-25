@@ -1,5 +1,7 @@
-export * from './TicketEvents/ticket-created-event';
-export * from './TicketEvents/ticket-updated-event';
+export * from './TicketEvents/ticket-created';
+export * from './TicketEvents/ticket-updated';
+export * from './OrderEvents/order-created'
+export * from './OrderEvents/order-cancelled';
 
 export * from './types/order-status';
 
